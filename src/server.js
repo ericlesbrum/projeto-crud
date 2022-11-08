@@ -1,7 +1,8 @@
 const express = require('express');
 const path = require('path');
+
 const db = require('./database');
-const routes=require('./routes');
+const routes = require('./routes');
 
 const app = express();
 
@@ -18,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 
 //definindo as rotas
-app.use('/',routes);
+app.use('/', routes);
 
 //404 error (not found)
 app.use((req, res) => {//middleware
